@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Bonjour")
+        NavigationStack {
+            ZStack {
+                Color(.systemGreen)
+                    .ignoresSafeArea() //Change color later
+      
+                VStack (spacing: 20.0){
+                    Text("Medidraw") // Change font
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    NavigationLink(destination: DrawingPage()) {
+                        Text("Draw")
+                    }
+                    NavigationLink(destination: InfoPage()) {
+                        Text("Info")
+                    }
+                    NavigationLink(destination: AboutPage()) {
+                        Text("About")
+                    }
+
+                    
+                    
+                }
+            }
         }
-        .padding()
+        
+        
     }
 }
 

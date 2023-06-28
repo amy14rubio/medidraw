@@ -34,9 +34,21 @@ struct DrawingPage: View {
             VStack{
                 Text("Drawing Prompt feature")
                 
-                Text("+ Drawing Pads feature")
+                HStack {
+                    Button(action: {
+                        // Code that will allow new pad to be made
+                    }) {
+                        Text("+") /* This is the button, we can make another file that will apply these changes. My thought process is that we can create a new file that once the button is clicked that file is a new pad is made and it is shown below. Then all the code that lets one go into the new pad is applied. It's just a rough thought for now.
+                                   */
+                    }
+                    
+                    Text("Drawing Pads Feature ")
+                }
+                
                 
                 //note: we might have to make the "+ Drawing Pads feature" a button so that everytime the user clicks on it a new drawing pad can be appended to some sort of an array (i tried to loop the drawing pad and tried to just copy and paste the code to have empty slots of drawing pads but it didn't work so appending a new drawing pad to some sort of array might work, maybe?) - Amy
+                
+                // Considering what we've just learned today with the to do list we may be able to implement this - Moyo
                 
                 //drawing pad
                 VStack{

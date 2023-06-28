@@ -33,7 +33,7 @@ struct ContentView: View {
                             .background(Color(red: 0.581, green: 0.625, blue: 0.581))
                             .cornerRadius(5)
                     }
-                    
+                    //Info Page button link
                     NavigationLink(destination: InfoPage()) {
                         Text("Info")
                             .font(.custom("Hiragino Kaku Gothic ProN", size: 20))
@@ -43,6 +43,8 @@ struct ContentView: View {
                             .background(Color(red: 0.581, green: 0.625, blue: 0.581))
                             .cornerRadius(5)
                     }
+                    
+                    //About Page button link
                     NavigationLink(destination: AboutPage()) {
                         Text("About")
                             .font(.custom("Hiragino Kaku Gothic ProN", size: 20))

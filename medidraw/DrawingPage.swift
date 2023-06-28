@@ -34,6 +34,8 @@ struct DrawingPage: View {
             VStack{
                 Text("Drawing Prompt feature")
                 
+                Spacer()
+                
                 HStack {
                     Button(action: {
                         // Code that will allow new pad to be made
@@ -51,6 +53,8 @@ struct DrawingPage: View {
                 // Considering what we've just learned today with the to do list we may be able to implement this - Moyo
                 
                 //drawing pad
+                
+                //Idea: Put the code in a class, so once the button is clicked it would print this whole thing? 
                 VStack{
                     //drawing area
                     Canvas { context, size in
@@ -77,6 +81,7 @@ struct DrawingPage: View {
                             }
                         }
                     }
+                    
                     //creates stroke lines
                     .gesture(draw ? DragGesture(minimumDistance: 0, coordinateSpace: .local)
                         .onChanged({value in
@@ -113,6 +118,24 @@ struct DrawingPage: View {
                                 .multilineTextAlignment(.trailing)
                                 .frame(width: 10)
                                 .padding(40)
+                            
+                            Button {
+                                lines.removeLast() /* Note: this removes very slowly. Has to click multiple times to make a change. I'm not familiar with your code so I'm wary about making severe changes - Moyo
+                                                    */
+                                
+                                
+                            } label: {
+                                Image(systemName: "arrow.uturn.backward.circle")
+                            }
+                            
+                            Button {
+                                //This doesn't do anything for now
+                            } label: {
+                                Image(systemName: "arrow.uturn.forward.circle")
+                            }
+                            
+                            
+                            
                         }
                     }
                     .padding(.horizontal, 30.0)
@@ -120,8 +143,9 @@ struct DrawingPage: View {
                     .frame(width: grow, height: draw ? 70 : 0)
                     .cornerRadius(20)
                     .animation(.easeInOut(duration: 1), value: grow)
+                    
                 }
-                
+                Spacer()
             }
             
             

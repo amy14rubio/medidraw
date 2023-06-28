@@ -14,7 +14,7 @@ struct AboutPage: View {
             Color(red: 118/255, green: 148/255, blue: 117/255)
                 .ignoresSafeArea()
             
-            VStack (spacing: 10.0){
+            VStack (spacing: 7.0){
                 // Title Page
                 Text("Medidraw")
                     .font(.custom("Bauhaus93", size: 20))
@@ -24,18 +24,19 @@ struct AboutPage: View {
                 
                 // Note: Change the format of this later
                 
-                
                 Spacer()
                 
-                // Information about background 
-                Text("Medidraw was made by Olivia, Amy, Moyo, Hiba and Kelly.  ")
-                    .font(.custom("Hiragino Kaku Gothic ProN", size: 14.0))
-                    .fontWeight(.black)
-                    .padding()
-                    .multilineTextAlignment(.center)
+                // Information about background
                 
+                HStack {
+                    Text("Medidraw was made by Olivia, Amy, Moyo, Hiba and Kelly. Our mission was to help people meditatively through a form of meditation, drawing. ")
+                        .font(.custom("Hiragino Kaku Gothic ProN", size: 29.0))
+                        .fontWeight(.black)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                }
                 Spacer()
-                
+                                
             }
         }
     }

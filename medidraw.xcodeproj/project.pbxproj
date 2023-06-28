@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5422F8222A4B739E00A65140 /* Bauhaus93.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5422F8212A4B739E00A65140 /* Bauhaus93.ttf */; };
 		547220542A4A15A300E8ED27 /* medidrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547220532A4A15A300E8ED27 /* medidrawApp.swift */; };
 		547220562A4A15A300E8ED27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547220552A4A15A300E8ED27 /* ContentView.swift */; };
 		547220582A4A15A400E8ED27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547220572A4A15A400E8ED27 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5422F8212A4B739E00A65140 /* Bauhaus93.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus93.ttf; sourceTree = "<group>"; };
+		5422F8232A4B73BC00A65140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		547220502A4A15A300E8ED27 /* medidraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = medidraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547220532A4A15A300E8ED27 /* medidrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medidrawApp.swift; sourceTree = "<group>"; };
 		547220552A4A15A300E8ED27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5422F8202A4B737C00A65140 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5422F8212A4B739E00A65140 /* Bauhaus93.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		547220472A4A15A300E8ED27 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +68,8 @@
 		547220522A4A15A300E8ED27 /* medidraw */ = {
 			isa = PBXGroup;
 			children = (
+				5422F8232A4B73BC00A65140 /* Info.plist */,
+				5422F8202A4B737C00A65140 /* fonts */,
 				547220532A4A15A300E8ED27 /* medidrawApp.swift */,
 				547220552A4A15A300E8ED27 /* ContentView.swift */,
 				AA9F7B8A2A4B64AD00E986C2 /* AboutPage.swift */,
@@ -134,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5422F8222A4B739E00A65140 /* Bauhaus93.ttf in Resources */,
 				5472205B2A4A15A400E8ED27 /* Preview Assets.xcassets in Resources */,
 				547220582A4A15A400E8ED27 /* Assets.xcassets in Resources */,
 			);
@@ -281,6 +295,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"medidraw/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = medidraw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +324,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"medidraw/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = medidraw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

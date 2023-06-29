@@ -12,8 +12,8 @@
 		547220562A4A15A300E8ED27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547220552A4A15A300E8ED27 /* ContentView.swift */; };
 		547220582A4A15A400E8ED27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547220572A4A15A400E8ED27 /* Assets.xcassets */; };
 		5472205B2A4A15A400E8ED27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472205A2A4A15A400E8ED27 /* Preview Assets.xcassets */; };
-		AA9914222A4DEE3100C4A540 /* silentWood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA9914212A4DEE3100C4A540 /* silentWood.mp3 */; };
-		AA9914242A4DEEB900C4A540 /* CrescentMoon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA9914232A4DEEB900C4A540 /* CrescentMoon.mp3 */; };
+		54A4D1E02A4DF1EB000D4A01 /* DrawingPadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4D1DF2A4DF1EB000D4A01 /* DrawingPadItem.swift */; };
+		54A4D1E22A4DF201000D4A01 /* DrawingPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4D1E12A4DF201000D4A01 /* DrawingPadView.swift */; };
 		AA9F7B872A4B644100E986C2 /* DrawingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F7B862A4B644100E986C2 /* DrawingPage.swift */; };
 		AA9F7B892A4B649B00E986C2 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F7B882A4B649B00E986C2 /* InfoPage.swift */; };
 		AA9F7B8B2A4B64AD00E986C2 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F7B8A2A4B64AD00E986C2 /* AboutPage.swift */; };
@@ -27,8 +27,8 @@
 		547220552A4A15A300E8ED27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		547220572A4A15A400E8ED27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5472205A2A4A15A400E8ED27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AA9914212A4DEE3100C4A540 /* silentWood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = silentWood.mp3; path = ../../../../silentWood.mp3; sourceTree = "<group>"; };
-		AA9914232A4DEEB900C4A540 /* CrescentMoon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CrescentMoon.mp3; path = ../../../../CrescentMoon.mp3; sourceTree = "<group>"; };
+		54A4D1DF2A4DF1EB000D4A01 /* DrawingPadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadItem.swift; sourceTree = "<group>"; };
+		54A4D1E12A4DF201000D4A01 /* DrawingPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadView.swift; sourceTree = "<group>"; };
 		AA9F7B862A4B644100E986C2 /* DrawingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPage.swift; sourceTree = "<group>"; };
 		AA9F7B882A4B649B00E986C2 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
 		AA9F7B8A2A4B64AD00E986C2 /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		547220522A4A15A300E8ED27 /* medidraw */ = {
 			isa = PBXGroup;
 			children = (
-				AA9914202A4DEE1200C4A540 /* Sound */,
 				5422F8232A4B73BC00A65140 /* Info.plist */,
 				5422F8202A4B737C00A65140 /* fonts */,
 				547220532A4A15A300E8ED27 /* medidrawApp.swift */,
@@ -80,6 +79,8 @@
 				AA9F7B8A2A4B64AD00E986C2 /* AboutPage.swift */,
 				AA9F7B882A4B649B00E986C2 /* InfoPage.swift */,
 				AA9F7B862A4B644100E986C2 /* DrawingPage.swift */,
+				54A4D1DF2A4DF1EB000D4A01 /* DrawingPadItem.swift */,
+				54A4D1E12A4DF201000D4A01 /* DrawingPadView.swift */,
 				547220572A4A15A400E8ED27 /* Assets.xcassets */,
 				547220592A4A15A400E8ED27 /* Preview Content */,
 			);
@@ -92,15 +93,6 @@
 				5472205A2A4A15A400E8ED27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AA9914202A4DEE1200C4A540 /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				AA9914212A4DEE3100C4A540 /* silentWood.mp3 */,
-				AA9914232A4DEEB900C4A540 /* CrescentMoon.mp3 */,
-			);
-			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +153,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9914222A4DEE3100C4A540 /* silentWood.mp3 in Resources */,
 				5422F8222A4B739E00A65140 /* Bauhaus93.ttf in Resources */,
 				5472205B2A4A15A400E8ED27 /* Preview Assets.xcassets in Resources */,
-				AA9914242A4DEEB900C4A540 /* CrescentMoon.mp3 in Resources */,
 				547220582A4A15A400E8ED27 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,9 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				547220562A4A15A300E8ED27 /* ContentView.swift in Sources */,
+				54A4D1E02A4DF1EB000D4A01 /* DrawingPadItem.swift in Sources */,
 				AA9F7B872A4B644100E986C2 /* DrawingPage.swift in Sources */,
 				AA9F7B892A4B649B00E986C2 /* InfoPage.swift in Sources */,
 				547220542A4A15A300E8ED27 /* medidrawApp.swift in Sources */,
+				54A4D1E22A4DF201000D4A01 /* DrawingPadView.swift in Sources */,
 				AA9F7B8B2A4B64AD00E986C2 /* AboutPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

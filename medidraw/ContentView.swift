@@ -10,32 +10,32 @@ import AVKit
 
 
 // Play music
-class SoundManager {
-    static let instance = SoundManager()
-    
-    var player: AVAudioPlayer?
-    
-    
-    enum SoundOption: String {
-        case silentWood
-        case CrescentMoon
-    }
-    
-    
-    
-    func playSound(sound: SoundOption) {
-        
-        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch let error {
-            print("Error playing sound. \(error.localizedDescription)")
-            
-        }
-    }
-}
+//class SoundManager {
+//    static let instance = SoundManager()
+//
+//    var player: AVAudioPlayer?
+//
+//
+//    enum SoundOption: String {
+//        case silentWood
+//        case CrescentMoon
+//    }
+//
+//
+//
+//    func playSound(sound: SoundOption) {
+//
+//        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
+//
+//        do {
+//            player = try AVAudioPlayer(contentsOf: url)
+//            player?.play()
+//        } catch let error {
+//            print("Error playing sound. \(error.localizedDescription)")
+//
+//        }
+//    }
+//}
 
 
 
@@ -51,10 +51,11 @@ struct ContentView: View {
                     .ignoresSafeArea()
       
                 VStack (spacing: 20.0){
-                    Button("Play Sound") {
-                        SoundManager.instance.playSound(sound : .CrescentMoon) //calls to play the sound
+//                    Button("Play Sound") {
+//                        SoundManager.instance.playSound(sound : .CrescentMoon)
+                        //calls to play the sound
                         // Note: As of right now, the button only plays one song, not 100% sure how to fix that. - Moyo
-                    }
+//                    }
                     
                     
                     //title

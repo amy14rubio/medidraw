@@ -14,8 +14,6 @@
 		5472205B2A4A15A400E8ED27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472205A2A4A15A400E8ED27 /* Preview Assets.xcassets */; };
 		54A4D1E02A4DF1EB000D4A01 /* DrawingPadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4D1DF2A4DF1EB000D4A01 /* DrawingPadItem.swift */; };
 		54A4D1E22A4DF201000D4A01 /* DrawingPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4D1E12A4DF201000D4A01 /* DrawingPadView.swift */; };
-		AA99142D2A4E06AF00C4A540 /* CrescentMoon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA99142C2A4E06AF00C4A540 /* CrescentMoon.mp3 */; };
-		AA99142F2A4E073A00C4A540 /* silentWood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA99142E2A4E073A00C4A540 /* silentWood.mp3 */; };
 		AA9914312A4E076200C4A540 /* finalMix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA9914302A4E076200C4A540 /* finalMix.mp3 */; };
 		AA9F7B872A4B644100E986C2 /* DrawingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F7B862A4B644100E986C2 /* DrawingPage.swift */; };
 		AA9F7B892A4B649B00E986C2 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F7B882A4B649B00E986C2 /* InfoPage.swift */; };
@@ -32,8 +30,6 @@
 		5472205A2A4A15A400E8ED27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54A4D1DF2A4DF1EB000D4A01 /* DrawingPadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadItem.swift; sourceTree = "<group>"; };
 		54A4D1E12A4DF201000D4A01 /* DrawingPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadView.swift; sourceTree = "<group>"; };
-		AA99142C2A4E06AF00C4A540 /* CrescentMoon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CrescentMoon.mp3; path = ../../../../CrescentMoon.mp3; sourceTree = "<group>"; };
-		AA99142E2A4E073A00C4A540 /* silentWood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = silentWood.mp3; path = ../../../../silentWood.mp3; sourceTree = "<group>"; };
 		AA9914302A4E076200C4A540 /* finalMix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finalMix.mp3; path = ../../../../finalMix.mp3; sourceTree = "<group>"; };
 		AA9F7B862A4B644100E986C2 /* DrawingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPage.swift; sourceTree = "<group>"; };
 		AA9F7B882A4B649B00E986C2 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
@@ -105,8 +101,6 @@
 		AA9914272A4E05F700C4A540 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				AA99142C2A4E06AF00C4A540 /* CrescentMoon.mp3 */,
-				AA99142E2A4E073A00C4A540 /* silentWood.mp3 */,
 				AA9914302A4E076200C4A540 /* finalMix.mp3 */,
 			);
 			path = "New Group";
@@ -170,11 +164,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA99142F2A4E073A00C4A540 /* silentWood.mp3 in Resources */,
 				5422F8222A4B739E00A65140 /* Bauhaus93.ttf in Resources */,
 				AA9914312A4E076200C4A540 /* finalMix.mp3 in Resources */,
 				5472205B2A4A15A400E8ED27 /* Preview Assets.xcassets in Resources */,
-				AA99142D2A4E06AF00C4A540 /* CrescentMoon.mp3 in Resources */,
 				547220582A4A15A400E8ED27 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

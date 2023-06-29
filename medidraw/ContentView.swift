@@ -15,8 +15,6 @@ class SoundManager {
     
     
     enum SoundOption: String {
-        case CrescentMoon
-        case silentWood
         case finalMix
     }
     

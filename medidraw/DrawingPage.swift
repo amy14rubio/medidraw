@@ -9,21 +9,18 @@ import SwiftUI
 
 //helped with making drawing pad strokes
 struct Line {
-    var points = [CGPoint]()
-    var color: Color = .black
-    var lineWidth: Double = 1.0
+    var points: [CGPoint]
+    var color: Color
+    var lineWidth: CGFloat
 }
 
 struct DrawingPage: View {
     
     //drawing stroke vars
-    @State private var currentLine = Line()
-    @State private var lines: [Line] = []
-    @State private var thickness: Double = 1.0
-    
-    //vars that helped animate the drawing pad
-    @State private var grow = 100.0
-    @State private var draw = false
+    @State private var lines = [Line]()
+    @State private var deletedLines = [Line]()
+    @State private var selectedColor: Color = .black
+    @State private var thickness: CGFloat = 1
     
     var body: some View {
         ZStack{
@@ -47,14 +44,16 @@ struct DrawingPage: View {
                     Text("Drawing Pads Feature ")
                 }
                 
-                
-                //note: we might have to make the "+ Drawing Pads feature" a button so that everytime the user clicks on it a new drawing pad can be appended to some sort of an array (i tried to loop the drawing pad and tried to just copy and paste the code to have empty slots of drawing pads but it didn't work so appending a new drawing pad to some sort of array might work, maybe?) - Amy
-                
                 // Considering what we've just learned today with the to do list we may be able to implement this - Moyo
                 
-                //drawing pad
+                //  i deleted the drawing pad animation as it doesn't work with the new code that lets the undo and redo buttons work, also if we're adding the to do list stuff we could also somehow add the core data thing in order to save the data for the drawings, i think we're going to learn how to add the core data in iteration 2 of the to do list project - Amy
                 
-                //Idea: Put the code in a class, so once the button is clicked it would print this whole thing? 
+                
+                //Idea: Put the code in a class, so once the button is clicked it would print this whole thing?
+                
+                //yeah i agree! we could put the drawing pad code into a separate file kind of like the NewToDoView from the to do list project - Amy
+                
+                //drawing pad
                 VStack{
                     //drawing area
                     Canvas { context, size in
@@ -62,89 +61,72 @@ struct DrawingPage: View {
                         for line in lines {
                             var path = Path()
                             path.addLines(line.points)
-                            context.stroke(path, with: .color(line.color), lineWidth: line.lineWidth)
+                            context.stroke(path, with: .color(line.color), style: StrokeStyle(lineWidth: line.lineWidth, lineCap: .round, lineJoin: .round))
                         }
                     }
                     .padding(1)
                     .background(Color(red: 0.943, green: 0.953, blue: 0.844))
-                    .frame(width: grow, height: grow)
+                    .frame(width: 350, height: 350)
                     .cornerRadius(30)
-                    //animates the drawing pad when tapped
-                    .onTapGesture {
-                        withAnimation(.easeInOut(duration: 1)){
-                            if draw == false{
-                                draw = true
-                                grow = 350.0
-                            } else if draw == true{
-                                draw = false
-                                grow = 100.0
-                            }
-                        }
-                    }
-                    
                     //creates stroke lines
-                    .gesture(draw ? DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                    .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
                         .onChanged({value in
                             let newPoint = value.location
-                            currentLine.points.append(newPoint)
-                            self.lines.append(currentLine)
+                            if value.translation.width + value.translation.height == 0 {
+                                lines.append(Line(points:[newPoint], color: selectedColor, lineWidth: thickness))
+                            } else {
+                                let index = lines.count - 1
+                                self.lines[index].points.append(newPoint)
+                            }
                         })
                         .onEnded({value in
-                                self.lines.append(currentLine)
-                                self.currentLine = Line(points: [], color: currentLine.color, lineWidth: thickness)
+                            if let last = lines.last?.points, last.isEmpty {
+                                lines.removeLast()
+                            }
                         })
-                        : nil
                     )
-                    
                     
                     
                     //drawing toolbar
                     HStack{
-                        if draw == true{
-                            //thickness slider
-                            Slider (value: $thickness, in: 1...50){
-                            }
-                            .onChange(of: thickness) { newThickness in
-                                currentLine.lineWidth = newThickness
-                            }
+                        //thickness slider
+                        Slider (value: $thickness, in: 1...50){
+                        }
+                        
+                        //thickness slider text
+                        Text("\(thickness, specifier: "%.f")")
+                            .padding(10)
+                            .font(.custom("Hiragino Kaku Gothic ProN", size: 15))
                             
-                            //thickness slider text
-                            Text("\(thickness, specifier: "%.f")")
-                                .padding(10)
-                                .font(.custom("Hiragino Kaku Gothic ProN", size: 15))
-                            
-                            //color picker
-                            ColorPicker("", selection: $currentLine.color)
-                                .multilineTextAlignment(.trailing)
-                                .frame(width: 10)
-                                .padding(40)
-                            
-                            Button {
-                                lines.removeLast() /* Note: this removes very slowly. Has to click multiple times to make a change. I'm not familiar with your code so I'm wary about making severe changes - Moyo
-                                                    */
-                                
-                                
+                        //color picker
+                        ColorPicker("", selection: $selectedColor)
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 10)
+                            .padding(40)
+                          
+                        //undo
+                        Button {
+                            let last = lines.removeLast()
+                            deletedLines.append(last)
                             } label: {
                                 Image(systemName: "arrow.uturn.backward.circle")
                             }
-                            
-                            Button {
-                                //This doesn't do anything for now
+                        
+                        //redo
+                        Button {
+                            let last = deletedLines.removeLast()
+                            lines.append(last)
                             } label: {
                                 Image(systemName: "arrow.uturn.forward.circle")
                             }
-                            
-                            
-                            
-                        }
                     }
                     .padding(.horizontal, 30.0)
                     .background(Color(red: 0.943, green: 0.953, blue: 0.844))
-                    .frame(width: grow, height: draw ? 70 : 0)
+                    .frame(width: 350, height:  70)
                     .cornerRadius(20)
-                    .animation(.easeInOut(duration: 1), value: grow)
                     
                 }
+                .accentColor(.gray)
                 Spacer()
             }
             

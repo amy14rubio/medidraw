@@ -19,7 +19,6 @@ class SoundManager {
     }
     
     
-    
     func playSound(sound: SoundOption) {
         
         guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }

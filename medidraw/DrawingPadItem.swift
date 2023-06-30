@@ -10,9 +10,6 @@ import Foundation
 class DrawingPadItem: Identifiable {
     var id = UUID()
     
-    
-    
-    
     var drawing: [String]
     
     init(drawing: [String]) {

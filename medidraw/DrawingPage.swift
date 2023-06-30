@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-//helped with making drawing pad strokes
-//struct Line {
-//    var points: [CGPoint]
-//    var color: Color
-//    var lineWidth: CGFloat
-//}
-
 struct DrawingPage: View {
     
-    @State private var showDrawingPad = false
+    @State var isAddDrawingPressed = false
     @State var drawingPadItems: [DrawingPadItem] = []
     @State var grow = 100.0
     
@@ -37,7 +30,7 @@ struct DrawingPage: View {
                 
                 HStack {
                     Button(action: {
-                        self.showDrawingPad = true
+                        isAddDrawingPressed = true
                     }) {
                         Text("+")
                     }
@@ -57,16 +50,15 @@ struct DrawingPage: View {
                 })
                 
                 Spacer()
-                
-                if showDrawingPad {
-                    DrawingPadView(drawing: [], drawingPadItems: $drawingPadItems, showDrawingPad: $showDrawingPad)
+                }
+                .sheet(isPresented: $isAddDrawingPressed) {
+                    DrawingPadView(drawing: [], drawingPadItems: $drawingPadItems, isAddDrawingPressed: $isAddDrawingPressed)
                 }
             }
             
             
             
         }
-    }
 }
 
 

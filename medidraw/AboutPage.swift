@@ -29,7 +29,7 @@ struct AboutPage: View {
                 // Information about background
                 
                 HStack {
-                    Text("Medidraw was made by Olivia, Amy, Moyo, Hiba and Kelly. Our mission was to help people meditatively through a form of meditation, drawing. ")
+                    Text("Medidraw was made by Olivia, Amy, Moyo and Hiba. Our mission was to help people meditatively through a form of meditation, drawing. ")
                         .font(.custom("Hiragino Kaku Gothic ProN", size: 29.0))
                         .fontWeight(.black)
                         .padding()

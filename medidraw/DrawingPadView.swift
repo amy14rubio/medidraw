@@ -26,7 +26,7 @@ struct DrawingPadView: View {
     
     @State var drawing: [String]
     @Binding var drawingPadItems: [DrawingPadItem]
-    @Binding var showDrawingPad : Bool
+    @Binding var isAddDrawingPressed: Bool
     
     var canvasPallete: some View {
         //drawing area
@@ -114,7 +114,7 @@ struct DrawingPadView: View {
                     //done button
                     Button(action: {
                         self.addDrawing(drawing: self.drawing)
-                        self.showDrawingPad = false
+                        isAddDrawingPressed = false
                         
                     }) {
                         Text("Done")
@@ -139,6 +139,6 @@ struct DrawingPadView: View {
 
 struct DrawingPadView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingPadView(drawing: [], drawingPadItems: .constant([]), showDrawingPad: .constant(true))
+        DrawingPadView(drawing: [], drawingPadItems: .constant([]), isAddDrawingPressed: .constant(true))
     }
 }
